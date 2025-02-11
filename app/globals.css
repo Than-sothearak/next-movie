@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* globals.css or your Tailwind CSS file */
+#slider {
+  @apply overflow-x-scroll scroll-smooth; /* Apply Tailwind classes for smooth scrolling */
+}
+
+#slider::-webkit-scrollbar {
+  @apply w-2; /* Width of the scrollbar */
+}
+
+#slider::-webkit-scrollbar-track {
+  @apply bg-gray-700 rounded-full; /* Track color and rounded corners */
+}
+
+#slider::-webkit-scrollbar-thumb {
+  @apply bg-gray-500 rounded-full; /* Thumb color and rounded corners */
+}
+
+#slider::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400; /* Thumb hover effect */
+}
+
+#slider::-webkit-scrollbar-button {
+  display: none; /* Hide the scrollbar buttons */
+}
