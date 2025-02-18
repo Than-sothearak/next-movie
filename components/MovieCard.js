@@ -7,18 +7,18 @@ export default function MovieCard({ movies }) {
 
   const slideLeft = () => {
     if (sliderRef.current) {
-      sliderRef.current.scrollLeft -= 500;
+      sliderRef.current.scrollLeft -= 1000;
     }
   };
 
   const slideRight = () => {
     if (sliderRef.current) {
-      sliderRef.current.scrollLeft += 500;
+      sliderRef.current.scrollLeft += 1000;
     }
   };
 
   return (
-    <div className="flex justify-center items-center gap-4">
+    <div className="flex justify-center items-center gap-4 z-20">
       <GrPrevious
         onClick={slideLeft}
         size={60}
