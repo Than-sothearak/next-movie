@@ -35,7 +35,7 @@ export const Hero = ({ movies }) => {
 
   return (
     <section
-      className="w-full 2xl:h-screen h-full p-10 m-auto max-2xl:px-2 flex flex-col justify-center gap-10 relative bg-cover bg-center transition-all duration-1000"
+      className="w-full h-full p-10 m-auto max-2xl:px-2 flex flex-col justify-center gap-10 relative bg-cover bg-center transition-all duration-1000"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path})`,
       }}
@@ -43,7 +43,7 @@ export const Hero = ({ movies }) => {
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-      <div className="2xl:absolute top-6  max-sm:top-0 px-10 2xl:w-3/4 flex flex-col justify-start items-start w-full pt-28 gap-5 text-white z-10">
+      <div className="2xl:absolute top-6 max-sm:top-0 px-10 2xl:w-3/4 flex flex-col justify-start items-start w-full pt-28 gap-5 text-white z-10">
         <div className="flex flex-col gap-5 max-w-5xl text-shadow-lg">
           <h1 className="text-8xl max-lg:text-[48px] max-sm:leading-[42px] font-bold">
             {selectedMovie.original_title}

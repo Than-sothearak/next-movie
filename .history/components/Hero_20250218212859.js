@@ -8,21 +8,16 @@ import { GrNext, GrPrevious } from "react-icons/gr";
 
 export const Hero = ({ movies }) => {
   const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
-  const [selectedMovie, setSelectedMovie] = useState(movies[currentMovieIndex]);
+  const [selectedMovie, setSelectedMovie] = useState();
   const sliderRef = useRef(null); // Create a reference for the slider
-  const [slideAmount, setSlideAmount] = useState(300); // Default slideAmount
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setSlideAmount(window.innerWidth > 768 ? 1000 : 300);
-    }
-  }, []);
+  const slideAmount = window.innerWidth > 768 ? 1000 : 300; 
+  
   const slideLeft = () => {
     if (sliderRef.current) {
       sliderRef.current.scrollLeft -= slideAmount;
     }
   };
-
+console.log(movies)
   const slideRight = () => {
     if (sliderRef.current) {
       sliderRef.current.scrollLeft += slideAmount;
@@ -35,7 +30,7 @@ export const Hero = ({ movies }) => {
 
   return (
     <section
-      className="w-full 2xl:h-screen h-full p-10 m-auto max-2xl:px-2 flex flex-col justify-center gap-10 relative bg-cover bg-center transition-all duration-1000"
+      className="w-full md:h-screen p-10 m-auto max-2xl:px-2 flex flex-col justify-center gap-10 relative bg-cover bg-center transition-all duration-1000"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path})`,
       }}
@@ -43,7 +38,7 @@ export const Hero = ({ movies }) => {
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-      <div className="2xl:absolute top-6  max-sm:top-0 px-10 2xl:w-3/4 flex flex-col justify-start items-start w-full pt-28 gap-5 text-white z-10">
+      <div className="md:absolute top-64 max-sm:top-0 px-10 2xl:w-3/4 flex flex-col justify-start items-start w-full pt-28 gap-5 text-white z-10">
         <div className="flex flex-col gap-5 max-w-5xl text-shadow-lg">
           <h1 className="text-8xl max-lg:text-[48px] max-sm:leading-[42px] font-bold">
             {selectedMovie.original_title}
@@ -76,7 +71,7 @@ export const Hero = ({ movies }) => {
       Cardmovie */}
 
 
-      <div className="lg:mx-8 max-sm:w-38 flex 2xl:absolute bottom-0 left-0 right-0 justify-center items-center gap-4 z-20">
+      <div className="lg:mx-8 max-sm:w-38 flex md:absolute bottom-0 left-0 right-0 justify-center items-center gap-4 z-20">
         <GrPrevious
           onClick={slideLeft}
           size={60}
@@ -92,7 +87,7 @@ export const Hero = ({ movies }) => {
               key={movie.id}
               onClick={() => handleMovieClick(index)}
               className={`inline-block hover:scale-105 ease-in-out duration-300 flex-none 
-              w-full sm:w-40 md:w-48 lg:w-32 cursor-pointer border-2 rounded-xl transition-all ${
+              w-full sm:w-40 md:w-48 lg:w-56 cursor-pointer border-2 rounded-xl transition-all ${
                 currentMovieIndex === index
                   ? "scale-105 border-4 shadow-lg inset-shadow-indigo-500"
                   : "hover:scale-105 border-2 border-transparent"

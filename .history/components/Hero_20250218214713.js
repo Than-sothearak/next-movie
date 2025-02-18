@@ -35,7 +35,7 @@ export const Hero = ({ movies }) => {
 
   return (
     <section
-      className="w-full 2xl:h-screen h-full p-10 m-auto max-2xl:px-2 flex flex-col justify-center gap-10 relative bg-cover bg-center transition-all duration-1000"
+      className="w-full 2xl:h-screen p-10 m-auto max-2xl:px-2 flex flex-col justify-center gap-10 relative bg-cover bg-center transition-all duration-1000"
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/original${selectedMovie.backdrop_path})`,
       }}
@@ -43,7 +43,7 @@ export const Hero = ({ movies }) => {
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-      <div className="2xl:absolute top-6  max-sm:top-0 px-10 2xl:w-3/4 flex flex-col justify-start items-start w-full pt-28 gap-5 text-white z-10">
+      <div className="2xl:absolute top-6 max-sm:top-0 px-10 2xl:w-3/4 flex flex-col justify-start items-start w-full pt-28 gap-5 text-white z-10">
         <div className="flex flex-col gap-5 max-w-5xl text-shadow-lg">
           <h1 className="text-8xl max-lg:text-[48px] max-sm:leading-[42px] font-bold">
             {selectedMovie.original_title}
@@ -92,7 +92,7 @@ export const Hero = ({ movies }) => {
               key={movie.id}
               onClick={() => handleMovieClick(index)}
               className={`inline-block hover:scale-105 ease-in-out duration-300 flex-none 
-              w-full sm:w-40 md:w-48 lg:w-32 cursor-pointer border-2 rounded-xl transition-all ${
+              w-full sm:w-40 md:w-48 lg:w cursor-pointer border-2 rounded-xl transition-all ${
                 currentMovieIndex === index
                   ? "scale-105 border-4 shadow-lg inset-shadow-indigo-500"
                   : "hover:scale-105 border-2 border-transparent"
